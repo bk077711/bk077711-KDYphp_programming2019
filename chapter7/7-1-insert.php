@@ -4,7 +4,7 @@
     mysql_select_db("kdy_db", $connect);
 
     $sql = "insert into biz_card (num, name, company, tel, hp, address)";
-    $sql .= " values (2, '원선우', '미래전자', '031-276-1829', ";
+    $sql .= " values (3, '원선우', '미래전자', '031-276-1829', ";
     $sql .= " '010-8723-2837', '경기도 용인시 신갈동 388-23 번지')";
 
     $result = mysql_query($sql);
