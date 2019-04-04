@@ -29,7 +29,7 @@
             <div class="text-center">
                 <h2>Beautiful <strong>Boardz</strong></h2>
                 <div style="display: block; width: 50%; margin-right: auto; margin-left: auto; position: relative;">
-                    <form class="example" action="action_page.php">
+                    <form class="example" action="action_page.php>
                         <input type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
