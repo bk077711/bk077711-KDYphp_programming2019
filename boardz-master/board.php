@@ -29,12 +29,18 @@
             <div class="text-center">
                 <h2>Beautiful <strong>Boardz</strong></h2>
                 <div style="display: block; width: 50%; margin-right: auto; margin-left: auto; position: relative;">
-                    <form class="example" action="board.php">
+                    <form class="example" action="board.php" method = "post">
                         <input type="text" placeholder="Search.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div>
+
+            <?
+            $connect = mysql_connect("localhost","kdy","1234");
+            mysql_select_db("kdy_db", $connect);
+            $sql = "SELECT * FROM boardz WHERE title LIKE '%$_POST[search]%'";
+            ?>
 
             <!--<hr class="seperator fifty-percent">-->
 
@@ -50,6 +56,7 @@
                         <img src="http://payload140.cargocollective.com/1/10/349041/5110553/Florrie.jpg" alt="demo image"/>
                     </li>
                 </ul>
+
                 <ul>
                     <li>
                         <h1>sumo</h1>
