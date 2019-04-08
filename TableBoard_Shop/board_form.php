@@ -2,6 +2,11 @@
 #TODO: update form 인 경우, form 에 정보 표시
 if(isset($_GET[num])) {
     #TODO: MySQL 테이블에서, num에 해당하는 레코드 가져오기
+    $connect = mysql_connect("localhost", "kdy", "1234");
+    mysql_select_db("kdy_db", $connect);
+    $sql = "select * from tableboard where id = $_GET[num]";
+    $result = mysql_query($sql,$connect);
+    $find = mysql_fetch_array($result);
 }
 ?>
 
@@ -59,9 +64,9 @@ if(isset($_GET[num])) {
                             <?php
                             if(isset($_GET[num])) { //update 의 경우!
                                 ?>
-                                <td class="column1"> <input name="date" type="text" value="<? #TODO: 정보 표시 ?>" /> </td>
-                                <td class="column2"> <input name="order_id" type="number" value="<? #TODO: 정보 표시 ?>" /> </td>
-                                <td class="column3"> <input name="name" type="text" value="<?  #TODO: 정보 표시 ?>" /> </td>
+                                <td class="column1"> <input name="date" type="text" value="<? $find[write_date] ?>" /> </td>
+                                <td class="column2"> <input name="order_id" type="number" value="<? $find[id] ?>" /> </td>
+                                <td class="column3"> <input name="name" type="text" value="<?  $find[name] ?>" /> </td>
                                 <td class="column4"> <input name="price" type="number" placeholder="$" style="text-align: right;" value="<? #TODO: 정보 표시 ?>" /> </td>
                                 <td class="column5"> <input name="quantity" type="number" value="<? #TODO: 정보 표시 ?>" style="text-align: right;" /> </td>
                                 <td class="column6"> $<span id="total"> <? #TODO: 정보 표시 ?> </span> </td>

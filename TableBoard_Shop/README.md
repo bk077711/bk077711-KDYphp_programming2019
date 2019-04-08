@@ -34,6 +34,13 @@ Note:
     
 ## index.php 수정
 [여기에 index.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+$connect를 이용해서 tableboard 테이블에 연동하고
+$sql = "select * from tableboard"를 해서 
+tableboard에 있는 모든 레코드를 검색하고 그 결과를 $result에 저장했습니다.
+그 후 while ( $row = mysql_fetch_array($result))를 해서
+레코드가 존재하면 계속해서 \<tr>와 \<td>를 사용해서 행을 만들었습니다.
+그리고 존재하는 행을 클릭할 경우 order id 정보를 board_form.php로
+넘겨서 해당 폼이 동작할 수 있도록 했습니다.
 
 ## board_form.php 수정
 [여기에 board_form.php 를 어떻게 수정했는지, 설명을 작성하세요.]
