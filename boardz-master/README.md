@@ -28,6 +28,9 @@
 그리고 수정을 아예 안했을때 나타나는 마지막 해골 그림은 ppt에 없어서 삭제했습니다.
 
 2. 그리고 $connect와 $sql을 사용해서 DB에 접속한 후
-'select * from ~~ like 검색어' 를 사용하여 검색어와 연관된 타이틀들만 보이게 했습니다.
+'select * from ~~ like 검색어' 를 사용하여 검색어와 연관된 타이틀의 정보만 가져오고
+그 정보를 $result에 저장하고 검색된 레코드들을 while문과 mysql_fetch_array를 사용해서
+ $row에 배열 형태로 저장하였습니다. 그 후 저장된 url, title, contents들을
+ sql 양식에 맞게 출력했습니다.
 
 [내용 추가!!]

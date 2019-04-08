@@ -40,47 +40,74 @@
             $connect = mysql_connect("localhost","kdy","1234");
             mysql_select_db("kdy_db", $connect);
             $sql = "SELECT * FROM boardz WHERE title LIKE '%$_POST[search]%'";
+            $result = mysql_query($sql,$connect);
             ?>
 
             <!--<hr class="seperator fifty-percent">-->
-
             <!-- Example Boardz element. -->
             <div class="boardz centered-block beautiful">
-                <ul>
+                <?
+                if($_POST[search] == "")
+                {
+                 echo
+                 "
+                 <ul>
                     <li>
                         <h1>PHP</h1>
-                        <img src="http://2.bp.blogspot.com/-pINYV0WlFyA/VUK-QcGbU5I/AAAAAAAABcU/fNy2pd2cFRk/s1600/WEB-Jack-White-Poster-Creative.png" alt="demo image"/>
+                        <img src=\"http://2.bp.blogspot.com/-pINYV0WlFyA/VUK-QcGbU5I/AAAAAAAABcU/fNy2pd2cFRk/s1600/WEB-Jack-White-Poster-Creative.png\" alt=\"demo image\"/>
                     </li>
 
                     <li>
-                        <img src="http://payload140.cargocollective.com/1/10/349041/5110553/Florrie.jpg" alt="demo image"/>
+                        <img src=\"http://payload140.cargocollective.com/1/10/349041/5110553/Florrie.jpg\" alt=\"demo image\"/>
                     </li>
                 </ul>
 
                 <ul>
                     <li>
                         <h1>sumo</h1>
-                        <img src="http://wpmedia.ottawacitizen.com/2015/11/01.jpg?quality=55&strip=all&w=840&h=630&crop=1" alt="demo image"/>
+                        <img src=\"http://wpmedia.ottawacitizen.com/2015/11/01.jpg?quality=55&strip=all&w=840&h=630&crop=1\" alt=\"demo image\"/>
                     </li>
                     <li>
-                        <img src="https://s-media-cache-ak0.pinimg.com/736x/8c/ee/ff/8ceeff967c03c7cf4f86391dd6366544.jpg" alt="demo image"/>
+                        <img src=\"https://s-media-cache-ak0.pinimg.com/736x/8c/ee/ff/8ceeff967c03c7cf4f86391dd6366544.jpg\" alt=\"demo image\"/>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <h1>sumo</h1>
-                        <img src="https://s-media-cache-ak0.pinimg.com/originals/87/16/8c/87168cbbf07cb54a9793bebaa20b1bde.jpg" alt="demo image"/>
+                        <img src=\"https://s-media-cache-ak0.pinimg.com/originals/87/16/8c/87168cbbf07cb54a9793bebaa20b1bde.jpg\" alt=\"demo image\"/>
                     </li>
                     <li>
                         <h1>Sumo Summo</h1>
                         Ex nostrud verterem mea, duo no delicata neglegentur. Audire integre rationibus ut pri, ex cibo oblique euismod sit, cibo iracundia vix at. Legimus torquatos definiebas an nec, mazim postulant at sit. Ne qui quando vocent accusata, nam tritani fierent no. Ea per vocent voluptatibus.
 
                         <br />
-                        <img src="https://s-media-cache-ak0.pinimg.com/736x/22/95/48/229548086245c332443109ca9f2e0890.jpg" alt="demo image"/>
+                        <img src=\"https://s-media-cache-ak0.pinimg.com/736x/22/95/48/229548086245c332443109ca9f2e0890.jpg\" alt=\"demo image\"/>
                     </li>
 
                 </ul>      
             </div>
+            ";
+                }
+                else
+                {
+                    while ( $row = mysql_fetch_array($result))
+                    {
+                        echo
+                        " <ul>
+                   <li>
+                        <h1>$row[title]</h1>";
+                        echo "$row[contents]";
+                        echo "<img src=$row[image_url] alt=\"demo image\"/>
+
+                        <br />
+                   </li>
+
+                </ul>";
+                    }
+                }
+                ?>
+            </div>
+
         </div>
 
         <hr class="seperator">
