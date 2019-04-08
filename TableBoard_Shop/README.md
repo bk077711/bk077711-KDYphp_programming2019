@@ -44,10 +44,23 @@ tableboard에 있는 모든 레코드를 검색하고 그 결과를 $result에 �
 
 ## board_form.php 수정
 [여기에 board_form.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+우선 if(isset($_GET[num]))값이 참일 경우
+$sql 와 $connect를 사용해서 레코드를 불러옵니다.
+그리고 불러온 레코드를 $find = mysql_fetch_array()를 사용해서
+배열 형태로 $find에 저장해둡니다. 그리고 사용자가 행을 눌러서
+update 모드로 들어왔을 경우 이전 값들을 표기해주기 위해서
+$find에 저장된 레코드 정보들을 input에서
+value="<? echo "$find[write_date]" 식으로 수정해서
+이전 값들을 수정 가능하게 표기해줍니다.
 
 ## function
 ### insert.php 수정
 [여기에 insert.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+insert에서는 보드폼에서 $_POST로 넘어온 데이터들을
+$sql을 이용해서 insert into 문을 사용해서 DB에 작성합니다.
+여기에서 if(!$result)를 사용해서 DB에 작성되지 않았을 경우에는
+오더 아이디가 겹친다는 에러 문구를 띄웁니다.
+그리고 DB에 작성 여부와 상관 없이 index.php로 돌아갑니다.
 
 ### update.php 수정
 [여기에 update.php 를 어떻게 수정했는지, 설명을 작성하세요.]

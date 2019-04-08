@@ -62,7 +62,7 @@
                         $mul =$row[price]*$row[quantity];
                         echo
                         "                    
-                    <tr onclick=\"location.href = ('board_form.php?num=$row[id]')\">
+                    <tr onclick=\"location.replace('board_form.php?num=$row[id]')\">
                         <td class=\"column1\">$row[write_date]</td>
                         <td class=\"column2\">$row[id]</td>
                         <td class=\"column3\">$row[name]</td>
