@@ -32,6 +32,16 @@ Note:
     - ex) price -> int
     - ex) name -> char or varchar
     
+    create table tableboard_shop (
+    write_date date,
+    id int,
+    name char(20),
+    price int,
+    quantity int,
+    num int auto_increment,
+    primary key (num)
+    );
+    
 ## index.php 수정
 [여기에 index.php 를 어떻게 수정했는지, 설명을 작성하세요.]
 $connect를 이용해서 tableboard 테이블에 연동하고
@@ -64,6 +74,12 @@ $sql을 이용해서 insert into 문을 사용해서 DB에 작성합니다.
 
 ### update.php 수정
 [여기에 update.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+우선 $connect를 해서 DB와 연결하고 $sql은
+update set where문을 사용해서 $_GET[num]과 일치하는 num이 있는 레코드를 수정했습니다.
+
 
 ### delete.php 수정
 [여기에 delete.php 를 어떻게 수정했는지, 설명을 작성하세요.]
+delete가 가장 간단한데 $connect를 해서 DB와 연결하고
+$sql은 delete from where문을 사용해서 $get[num]을 통해서 받은
+order_id를 삭제하기만 하면 됩니다.

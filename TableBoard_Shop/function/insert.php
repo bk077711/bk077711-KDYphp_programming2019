@@ -10,12 +10,12 @@
 $connect = mysql_connect("localhost", "kdy", "1234");
 mysql_select_db("kdy_db", $connect);
 
-$sql = "insert into tableboard (write_date, id, name, price, quantity)";
-$sql .= "values($_POST[date], $_POST[order_id], $_POST[name], $_POST[price], $_POST[quantity])";
-$result = mysql_query($sql, $connect);
-if (!$result)
+$sql_insert = "insert into tableboard_shop (write_date, id, name, price, quantity)";
+$sql_insert .= "values('$_POST[date]', $_POST[order_id], '$_POST[name]', $_POST[price], $_POST[quantity])";
+$result_insert = mysql_query($sql_insert, $connect);
+if (!$result_insert)
     # 참고 : 에러 메시지 출력 방법
-    echo "<script> alert('this is overlaped order_id...') </script>";
+    #echo "<script> alert('this is overlaped order_id...') </script>";
 
 ?>
 
