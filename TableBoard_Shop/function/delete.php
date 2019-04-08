@@ -10,7 +10,7 @@
 $connect = mysql_connect("localhost", "kdy", "1234");
 mysql_select_db("kdy_db", $connect);
 
-$sql_delete = "delete from tableboard_shop where id = '$_GET[num]'";
+$sql_delete = "delete from tableboard_shop where num = '$_GET[num]'";
 $result_insert = mysql_query($sql_delete, $connect);
 if(!$result_insert)
 # 참고 : 에러 메시지 출력 방법
