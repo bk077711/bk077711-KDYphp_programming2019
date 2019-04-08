@@ -83,6 +83,9 @@
                         <br />
                         <img src=\"https://s-media-cache-ak0.pinimg.com/736x/22/95/48/229548086245c332443109ca9f2e0890.jpg\" alt=\"demo image\"/>
                     </li>
+                    <li>
+                        <img src=\"https://inspirationfeeed.files.wordpress.com/2014/01/ca402f7410884454ec5c303336e8591d1.jpg\" alt=\"demo image\"/>
+                    </li>
 
                 </ul>      
             </div>

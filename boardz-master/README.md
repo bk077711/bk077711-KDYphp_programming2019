@@ -23,12 +23,16 @@
 ```
 
 ## board.php (수정)
- 먼저 주어진 양식을 만들기 위해서
-\<ui>에서 처음 만나는 \<li>마다 \<h1>을 통해서 상단의 회색의 제목을 입력했습니다.
-그리고 수정을 아예 안했을때 나타나는 마지막 해골 그림은 ppt에 없어서 삭제했습니다.
+example form의 form 태그에서 action="board.php"변경 및 method='post' 추가하여
+검색 아이콘을 누를 경우 board.php로 $_POST[search]값을 가지고 돌아오게 변경
 
- 그리고 $connect와 $sql을 사용해서 DB에 접속한 후
+div 클래스 "boardz centered-block beautiful"에서
+if문을 사용하여 (검색어 없음 + 초기화면)과 (검색어 있음)으로 구분하고
+검색어가 없을 경우는 초기화면을,
+검색어가 있을 경우에는
+$connect와 $sql을 사용해서 DB에 접속한 후
 'select * from ~~ like 검색어' 를 사용하여 검색어와 연관된 타이틀의 정보만 가져오고
 그 정보를 $result에 저장하고 검색된 레코드들을 while문과 mysql_fetch_array를 사용해서
  $row에 배열 형태로 저장하였습니다. 그 후 저장된 url, title, contents들을
  sql 양식에 맞게 출력했습니다.
+ 이렇게 할 경우 주어진 과제에 일치하는 결과가 나옵니다.
