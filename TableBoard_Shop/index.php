@@ -66,9 +66,9 @@
                         <td class=\"column1\">$row[write_date]</td>
                         <td class=\"column2\">$row[id]</td>
                         <td class=\"column3\">$row[name]</td>
-                        <td class=\"column4\">$row[price]</td>
+                        <td class=\"column4\">$$row[price]</td>
                         <td class=\"column5\">$row[quantity]</td>
-                        <td class=\"column6\">$mul</td>
+                        <td class=\"column6\">$$mul</td>
                     </tr> 
                     ";
                     }
